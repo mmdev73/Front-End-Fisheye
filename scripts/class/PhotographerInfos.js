@@ -41,4 +41,27 @@ export class PhotographerInfos {
 
     return elementDom
   }
+
+  /**
+   * Generates the DOM element for displaying photographer information.
+   *
+   * @return {string} The generated DOM element.
+   */
+  getDOMPhotographerInfos () {
+    let elementDom = ''
+    elementDom += `<h2 class="photographer-infos__name">${this.name}</h2>`
+    elementDom += `<p class="photographer-infos__city">${this.city}, ${this.country}</p>`
+    elementDom += `<p class="photographer-infos__tagline">${this.tagline}</p>`
+
+    return elementDom
+  }
+
+  /**
+   * A function to get the DOM portrait.
+   *
+   * @return {string} the image tag for the portrait
+   */
+  getDOMPortrait () {
+    return `<img src="${this.portrait}" alt="Portrait de ${this.name}" class="photographer-article__portrait">`
+  }
 }

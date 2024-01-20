@@ -35,4 +35,24 @@ export class PhotographerFactory {
     const { id, photographerId, title, likes, date, price, isLiked, image = null, video = null } = data
     return new PhotographerMedias(id, photographerId, title, likes, date, price, isLiked, image, video)
   }
+
+  /**
+   * Retrieves the photographer information based on the provided data.
+   *
+   * @param {Array} data - The data containing photographers' information.
+   * @return {undefined|DOMElement} - The DOM element representing the photographer information, or undefined if the photographer ID is not found in the data.
+   */
+  static getPhotographer (photographer) {
+    return this.createPhotographerInfos(photographer[0]).getDOMPhotographerInfos()
+  }
+
+  /**
+   * Retrieves the portrait of a photographer based on the given data.
+   *
+   * @param {Array} data - The data containing information about photographers.
+   * @return {Element} - The DOM element representing the portrait of the photographer.
+   */
+  static getPortrait (photographer) {
+    return this.createPhotographerInfos(photographer[0]).getDOMPortrait()
+  }
 }
