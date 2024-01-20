@@ -80,7 +80,7 @@ export function displayPrice (photographer) {
  * @param {Array} medias - The array of media items
  * @return {void}
  */
-export function displayTotalLike(medias) {
+export function displayTotalLike (medias) {
   // Calculate the total number of likes
   const counter = medias.reduce((total, media) => total + media.likes, 0) // callback function on each array element. 0 is the initial value - Return the final accumulator value
 

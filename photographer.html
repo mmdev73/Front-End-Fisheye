@@ -37,15 +37,60 @@
 
     </div>
   </main>
+  <!-- Floating Price -->
   <div class="floating-likes">
     <div class="floating-likes_infos">
       <span class="floating-likes_info--number">0</span>
       <i class="fa-solid fa-heart floating-likes_info--icon"></i>
     </div>
     <p class="floating-likes_price">
-
     </p>
   </div>
+  <!-- Contact Modal -->
+  <dialog class="contact-modal">
+    <div class="contact-modal__header">
+      <h2 class="contact-modal__title">Contactez-moi</h2>
+      <h3 class="contact-modal__subtitle">dynamic_name</h3>
+      <button class="contact-modal__close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <form class="contact-modal__form">
+      <fieldset class="contact-modal__fieldset">
+        <legend class="contact-modal__fieldset--legend">Formulaire de contact</legend>
+        <div class="contact-modal__form--data">
+          <label for="firstname" class="contact-modal__label">Prénom</label>
+          <div class="contact-modal__inputbox">
+            <span class="error__validation"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <input type="text" name="firstname" id="firstname" class="contact-modal__input">
+          </div>
+        </div>
+        <div class="contact-modal__form--data">
+          <label for="name" class="contact-modal__label">Nom</label>
+          <div class="contact-modal__inputbox">
+            <span class="error__validation"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <input type="text" name="name" id="name" class="contact-modal__input">
+          </div>
+        </div>
+        <div class="contact-modal__form--data">
+          <label for="email" class="contact-modal__label">Email</label>
+          <div class="contact-modal__inputbox">
+            <span class="error__validation"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <input type="email" name="email" id="email" class="contact-modal__input">
+          </div>
+        </div>
+        <div class="contact-modal__form--data">
+          <label for="message" class="contact-modal__label">Message</label>
+          <div class="contact-modal__inputbox">
+            <span class="error__validation error__validation--textarea"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <textarea name="message" id="message" class="contact-modal__input contact-modal__input--textarea"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn contact-modal__btn">Envoyer</button>
+      <p class="contact-modal__validate">Votre message à bien été envoyé. <br>Le formulaire se fermera automatiquement dans : <span class="automatic__close__timer"></span> secondes</p>
+    </form>
+  </dialog>
   <script src="./scripts/pages/photographer.js" type="module"></script>
 </body>
 </html>

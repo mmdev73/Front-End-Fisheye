@@ -151,7 +151,11 @@ PHOTOGRAPHER MEDIAS
   -webkit-background-clip: text;
   color: transparent;
 }
+/**
 
+PHOTOGRAPHER FLOATING PRICE
+
+*/
 .floating-likes{  
   z-index: 1;  
   position: fixed;
@@ -179,4 +183,156 @@ PHOTOGRAPHER MEDIAS
 .floating-likes_info--number{
   font-weight: 700;
   margin-right: 10px;
+}
+/**
+
+PHOTOGRAPHER CONTACT MODAL
+
+*/
+.contact-modal{
+  background-color: #DB8876;
+  border-radius: 5px;
+  width: calc(50% - 40px);
+  padding: 20px;
+  margin: auto;
+}
+
+.contact-modal:focus{
+  outline: none;
+}
+
+.contact-modal::backdrop{
+  background: rgb(0 0 0 / 30%);
+}
+
+.contact-modal__header{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-modal__title {
+  line-height: 0.7em;
+  font-size: 50px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contact-modal__subtitle{
+  font-size: 40px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contact-modal__close{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-modal__form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-modal__fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+  border: none;
+  padding: 0;
+}
+
+.contact-modal__label {
+  color: #312E2E;
+  font-size: 36px;
+}
+
+.contact-modal__form--data{    
+  width: 100%;
+}
+
+.contact-modal__form--data[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.8em;
+  color: #000000;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.contact-modal__form--data[data-error-visible="true"]::after {
+opacity: 1;
+}
+
+.contact-modal__form--data[data-error-visible="true"] textarea,
+.contact-modal__form--data[data-error-visible="true"] input{
+border: 2px solid #ff0000;
+}
+
+.contact-modal__inputbox{
+  position: relative;
+}
+
+.error__validation{
+  width: calc(68px - 20px);
+  height: calc(68px - 24px);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  display:none;
+}
+
+.error__validation--textarea{
+  bottom: 38px;
+}
+
+.contact-modal__input {
+  width: calc(100% - 20px);
+  height: 68px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 24px;
+  padding: 0 10px;
+}
+
+.contact-modal__input--textarea{
+  height: 136px;                      
+  resize: none;
+}
+
+.contact-modal__btn--close{
+  display: none;
+}
+
+.contact-modal__validate{
+  font-size: 1.2rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  text-align: center;
+}
+
+.contact-modal__validate--close{
+  display: none;
 }

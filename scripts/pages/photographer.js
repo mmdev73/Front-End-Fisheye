@@ -40,7 +40,7 @@ if (!isNaN(photographerId)) {
     element.isLiked = false
   })
   /**
-   * Filter the 'medias' array to include only items with matching 'photographerId', 
+   * Filter the 'medias' array to include only items with matching 'photographerId',
    * and filter the 'photographers' array to include only items with matching 'id'.
    */
   medias = medias.filter(item => item.photographerId === photographerId)
