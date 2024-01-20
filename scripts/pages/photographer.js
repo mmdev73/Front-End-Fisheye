@@ -1,5 +1,20 @@
 import { displayPhotographInfo, displayPortrait, displayMedias, displayPrice, displayTotalLike } from '../utils/functions.js'
-
+import {
+  inputFirst,
+  inputLast,
+  inputEmail,
+  inputMsg,
+  rgxName,
+  rgxEmail,
+  rgxMsg,
+  openModal,
+  closeModal,
+  isValidInput,
+  validateForm,
+  toggleValidSend
+} from '../utils/contactForm.js'
+import { objForm } from '../class/Validation.js'
+import { objMsg } from '../class/ErrorMsg.js'
 // Extract the photographer ID from the URL query parameters and convert it to a number
 const photographerId = Number(new URL(location.href).searchParams.get('id'))
 
@@ -51,6 +66,8 @@ if (!isNaN(photographerId)) {
   displayMedias(medias)
   displayPrice(photographers)
   displayTotalLike(medias)
+  const dynamicSubtitle = document.querySelector('.contact-modal__subtitle')
+  dynamicSubtitle.textContent = photographers[0].name
 
   document.addEventListener('click', (event) => {
     if (event.target.hasAttribute('data-context')) {
@@ -89,11 +106,31 @@ if (!isNaN(photographerId)) {
           }
           displayMedias(medias)
           break
+        case 'contact-btn-open':
+          openModal()
+          break
+        case 'contact-btn-close':
+          closeModal()
+          break
+        case 'btn-modal-send':
+          console.log('TOTO')
+          if (validateForm()) {
+            console.log('TATA')
+            console.log(objForm.allValues) // Pour la soutenance
+            toggleValidSend()
+          }
+          break
         default:
           break
       }
     }
   })
+  // Modal eventListener for live validation
+  inputFirst.addEventListener('input', () => isValidInput(inputFirst, objMsg.errName, rgxName))
+  inputLast.addEventListener('input', () => isValidInput(inputLast, objMsg.errNameLast, rgxName))
+  inputEmail.addEventListener('input', () => isValidInput(inputEmail, objMsg.errEmail, rgxEmail))
+  inputMsg.addEventListener('focusout', () => isValidInput(inputMsg, objMsg.msg, rgxMsg))
+  inputMsg.addEventListener('input', () => isValidInput(inputMsg, objMsg.msg, rgxMsg))
 } else {
   window.location.href = './index.html'
 }

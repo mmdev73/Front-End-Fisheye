@@ -20,7 +20,7 @@
       <div class="photograph-header_infos">
 
       </div>
-      <button class="btn photograph-header_contact">Contactez-moi</button>
+      <button class="btn photograph-header_contact" data-context="contact-btn-open">Contactez-moi</button>
       <div class="photograph-header_portrait">
 
       </div>
@@ -49,15 +49,17 @@
   <!-- Contact Modal -->
   <dialog class="contact-modal">
     <div class="contact-modal__header">
-      <h2 class="contact-modal__title">Contactez-moi</h2>
-      <h3 class="contact-modal__subtitle">dynamic_name</h3>
-      <button class="contact-modal__close">
-        <i class="fa-solid fa-xmark"></i>
+      <div class="contact-modal__header--titlebox">
+        <h2 class="contact-modal__title">Contactez-moi</h2>
+        <h3 class="contact-modal__subtitle">dynamic_name</h3>
+      </div>
+      <button class="contact-modal__close" data-context="contact-btn-close">
+        <i class="fa-solid fa-xmark contact-modal__close--icon" data-context="contact-btn-close"></i>
       </button>
     </div>
     <form class="contact-modal__form">
       <fieldset class="contact-modal__fieldset">
-        <legend class="contact-modal__fieldset--legend">Formulaire de contact</legend>
+        <legend class="contact-modal__fieldset--legend sr-only">Formulaire de contact</legend>
         <div class="contact-modal__form--data">
           <label for="firstname" class="contact-modal__label">Prénom</label>
           <div class="contact-modal__inputbox">
@@ -87,7 +89,7 @@
           </div>
         </div>
       </fieldset>
-      <button type="submit" class="btn contact-modal__btn">Envoyer</button>
+      <button type="button" class="btn contact-modal__btn" id="contact-modal__btn" data-context="btn-modal-send">Envoyer</button>
       <p class="contact-modal__validate">Votre message à bien été envoyé. <br>Le formulaire se fermera automatiquement dans : <span class="automatic__close__timer"></span> secondes</p>
     </form>
   </dialog>

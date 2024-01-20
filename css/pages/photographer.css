@@ -230,6 +230,8 @@ PHOTOGRAPHER CONTACT MODAL
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-size: 70px;
+  color: white;   
 }
 
 .contact-modal__form {
