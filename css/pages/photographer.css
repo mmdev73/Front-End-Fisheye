@@ -338,3 +338,116 @@ border: 2px solid #ff0000;
 .contact-modal__validate--close{
   display: none;
 }
+/*************************************************************************
+
+Media Queries
+
+*************************************************************************/
+@media screen and (max-width:1366px) {
+  .photograph-header {
+      margin: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .photographer-infos__name{
+      font-size: 50px;
+  }
+  photographer-article__portrait{
+      height: 150px;
+      width: 150px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .floating-likes{
+      right: calc(50% - 150px);
+      bottom: 0;
+  }
+
+  .floating-likes_infos{
+      width: 300px;
+      height: 60px;
+  }
+
+  .media-image{
+      width: 100%;
+  }
+
+  .media-image__image{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .photograph-header{
+      flex-flow: column;
+  }
+
+  .photograph-header_infos{
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  .photographer-article__portrait{
+      height: 100px;
+      width: 100px;
+  }
+
+  .photograph-header_contact{
+      height: 50px;
+  }
+
+  .medias-filter_select{
+      height: 50px;
+  }
+
+  .media-image{
+      width: 100%;
+  }
+
+  .media-image__figure{
+      width: 100%;
+  }
+
+  .media-image__image{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) { 
+  .floating-likes_infos{
+      width: 300px;
+      height: 50px;
+  }
+
+  .medias-filter{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .medias-container{
+      margin: 0;
+  }
+
+  .media-image__figure{
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  button[class*='lb__btn__']{
+      height: 30px;
+      width: 30px;
+      background-color: transparent;
+      border: transparent;
+      cursor: pointer;    
+      font-weight: 700;
+      font-size: 30px;
+      color: #901C1C;
+      transition: 350ms;
+  }
+}
