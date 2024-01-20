@@ -41,6 +41,48 @@ if (!isNaN(photographerId)) {
   displayPhotographInfo(photographers)
   displayPortrait(photographers)
   displayMedias(medias)
+
+  document.addEventListener('click', (event) => {
+    if (event.target.hasAttribute('data-context')) {
+      const dataId = event.target.getAttribute('data-id')
+      const dataContext = event.target.getAttribute('data-context')
+      const value = event.target.value
+      let mediaToUpdate = {}
+      switch (dataContext) {
+        case 'like-icon':
+          mediaToUpdate = medias.find(media => media.id === Number(dataId))
+          if (!mediaToUpdate.isLiked) {
+            mediaToUpdate.likes++
+            mediaToUpdate.isLiked = true
+          } else {
+            mediaToUpdate.likes--
+            mediaToUpdate.isLiked = false
+          }
+          displayMedias(medias)
+          break
+        case 'filter-select':
+          // Sort the media items based on the filter option value
+          switch (Number(value)) {
+            case 0:
+              medias = medias.sort((a, b) => b.likes - a.likes)
+              break
+            case 1:
+              medias = medias.sort((a, b) => new Date(b.date) - new Date(a.date))
+              break
+            case 2:
+              medias = medias.sort((a, b) => a.title.localeCompare(b.title))
+              break
+            default:
+              medias = medias.sort((a, b) => b.likes - a.likes)
+              break
+          }
+          displayMedias(medias)
+          break
+        default:
+          break
+      }
+    }
+  })
 } else {
   window.location.href = './index.html'
 }
