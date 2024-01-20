@@ -1,4 +1,4 @@
-import { displayPhotographInfo, displayPortrait, displayMedias } from '../utils/functions.js'
+import { displayPhotographInfo, displayPortrait, displayMedias, displayPrice, displayTotalLike } from '../utils/functions.js'
 
 // Extract the photographer ID from the URL query parameters and convert it to a number
 const photographerId = Number(new URL(location.href).searchParams.get('id'))
@@ -33,14 +33,24 @@ if (!isNaN(photographerId)) {
 
   let photographers = data.photographers
   let medias = data.media
+  /**
+   * Set the 'isLiked' flag to false as default for each element in the 'medias' array.
+   */
   medias.forEach(element => {
     element.isLiked = false
   })
+  /**
+   * Filter the 'medias' array to include only items with matching 'photographerId', 
+   * and filter the 'photographers' array to include only items with matching 'id'.
+   */
   medias = medias.filter(item => item.photographerId === photographerId)
   photographers = photographers.filter(item => item.id === photographerId)
+
   displayPhotographInfo(photographers)
   displayPortrait(photographers)
   displayMedias(medias)
+  displayPrice(photographers)
+  displayTotalLike(medias)
 
   document.addEventListener('click', (event) => {
     if (event.target.hasAttribute('data-context')) {
@@ -59,6 +69,7 @@ if (!isNaN(photographerId)) {
             mediaToUpdate.isLiked = false
           }
           displayMedias(medias)
+          displayTotalLike(medias)
           break
         case 'filter-select':
           // Sort the media items based on the filter option value

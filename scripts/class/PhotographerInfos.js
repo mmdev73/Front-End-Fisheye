@@ -64,4 +64,8 @@ export class PhotographerInfos {
   getDOMPortrait () {
     return `<img src="${this.portrait}" alt="Portrait de ${this.name}" class="photographer-article__portrait">`
   }
+
+  getPrice () {
+    return this.price + '€/jour'
+  }
 }

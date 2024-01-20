@@ -62,3 +62,29 @@ export function displayMedias (medias) {
   const headerPortrait = document.querySelector('.medias-container')
   headerPortrait.innerHTML = PhotographerFactory.getMedias(medias)
 }
+
+/**
+ * Displays the price of the photographer on the webpage.
+ *
+ * @param {string} photographer - The photographer's name.
+ * @return {void}
+ */
+export function displayPrice (photographer) {
+  const floatingPrice = document.querySelector('.floating-likes_price')
+  floatingPrice.innerHTML = PhotographerFactory.getPrice(photographer)
+}
+
+/**
+ * Updates the total number of likes displayed on the UI based on the given array of media items.
+ *
+ * @param {Array} medias - The array of media items
+ * @return {void}
+ */
+export function displayTotalLike(medias) {
+  // Calculate the total number of likes
+  const counter = medias.reduce((total, media) => total + media.likes, 0) // callback function on each array element. 0 is the initial value - Return the final accumulator value
+
+  // Get the element for displaying the total likes and update its content
+  const totalLikeElement = document.querySelector('.floating-likes_info--number')
+  totalLikeElement.innerHTML = counter
+}

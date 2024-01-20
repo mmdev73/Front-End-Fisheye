@@ -57,6 +57,10 @@ export class PhotographerFactory {
     return this.createPhotographerInfos(photographer[0]).getDOMPortrait()
   }
 
+  static getPrice (photographer) {
+    return this.createPhotographerInfos(photographer[0]).getPrice()
+  }
+
   /**
   * Retrieves the media elements associated with a specific photographer ID.
   *
