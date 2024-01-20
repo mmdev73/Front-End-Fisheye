@@ -52,3 +52,13 @@ export function displayPortrait (photographer) {
   const headerPortrait = document.querySelector('.photograph-header_portrait')
   headerPortrait.innerHTML = PhotographerFactory.getPortrait(photographer)
 }
+
+/**
+ * Displays the given medias on the page.
+ *
+ * @param {Array} medias - An array of medias to be displayed.
+ */
+export function displayMedias (medias) {
+  const headerPortrait = document.querySelector('.medias-container')
+  headerPortrait.innerHTML = PhotographerFactory.getMedias(medias)
+}

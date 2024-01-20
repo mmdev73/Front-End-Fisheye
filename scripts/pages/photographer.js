@@ -1,4 +1,4 @@
-import { displayPhotographInfo, displayPortrait } from '../utils/functions.js'
+import { displayPhotographInfo, displayPortrait, displayMedias } from '../utils/functions.js'
 
 // Extract the photographer ID from the URL query parameters and convert it to a number
 const photographerId = Number(new URL(location.href).searchParams.get('id'))
@@ -40,6 +40,7 @@ if (!isNaN(photographerId)) {
   photographers = photographers.filter(item => item.id === photographerId)
   displayPhotographInfo(photographers)
   displayPortrait(photographers)
+  displayMedias(medias)
 } else {
   window.location.href = './index.html'
 }

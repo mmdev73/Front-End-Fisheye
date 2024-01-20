@@ -1,4 +1,5 @@
 import { PhotographerInfos } from './PhotographerInfos.js'
+import { PhotographerMedias } from './PhotographerMedias.js'
 export class PhotographerFactory {
   /**
    * Creates a new Photographer object based on the provided data.
@@ -54,5 +55,26 @@ export class PhotographerFactory {
    */
   static getPortrait (photographer) {
     return this.createPhotographerInfos(photographer[0]).getDOMPortrait()
+  }
+
+  /**
+  * Retrieves the media elements associated with a specific photographer ID.
+  *
+  * @param {Object[]} data - An array of media items.
+  * @param {number} filter - The filter option for sorting the media items. Default is null.
+  * @returns {string} The HTML string representing the media elements.
+  */
+  static getMedias (data) {
+    let elementDom = ''
+    // Generate the HTML string for each media item
+    data.forEach(media => {
+      if (typeof media.image !== 'undefined') {
+        elementDom += this.createPhotographerMedias(media).getDOMMediaImage()
+      } else {
+        elementDom += this.createPhotographerMedias(media).getDOMMediaVideo()
+      }
+    })
+
+    return elementDom
   }
 }
