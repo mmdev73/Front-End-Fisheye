@@ -7,8 +7,8 @@ import {
   rgxName,
   rgxEmail,
   rgxMsg,
-  openModal,
-  closeModal,
+  openModalContact,
+  closeModalContact,
   isValidInput,
   validateForm,
   toggleValidSend
@@ -60,6 +60,7 @@ if (!isNaN(photographerId)) {
    */
   medias = medias.filter(item => item.photographerId === photographerId)
   photographers = photographers.filter(item => item.id === photographerId)
+  document.querySelector('.header__title').innerText = 'Page de profil de ' + photographers[0].name
 
   displayPhotographInfo(photographers)
   displayPortrait(photographers)
@@ -107,10 +108,10 @@ if (!isNaN(photographerId)) {
           displayMedias(medias)
           break
         case 'contact-btn-open':
-          openModal()
+          openModalContact()
           break
         case 'contact-btn-close':
-          closeModal()
+          closeModalContact()
           break
         case 'btn-modal-send':
           console.log('TOTO')

@@ -50,7 +50,7 @@ export class PhotographerInfos {
   getDOMPhotographerInfos () {
     let elementDom = ''
     elementDom += `<h2 class="photographer-infos__name">${this.name}</h2>`
-    elementDom += `<p class="photographer-infos__city">${this.city}, ${this.country}</p>`
+    elementDom += `<h3 class="photographer-infos__city">${this.city}, ${this.country}</h3>`
     elementDom += `<p class="photographer-infos__tagline">${this.tagline}</p>`
 
     return elementDom

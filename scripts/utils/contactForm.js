@@ -8,7 +8,7 @@ export const inputEmail = document.getElementById('email')
 export const inputMsg = document.getElementById('message')
 
 let tmOut
-const dialog = document.querySelector('dialog')
+const dialog = document.querySelector('dialog.contact-modal')
 export let modalOpen = false // Handler for toggle lightbox and modal
 
 // Expression reguliere pour les tests
@@ -19,7 +19,7 @@ export const rgxMsg = /^[\w\W]+$/ // message non vide (aucune vérification de l
 /**
  * Ouvertue du modal
  */
-export function openModal () {
+export function openModalContact () {
   dialog.showModal()
   clearTimeout(tmOut)
   modalOpen = true
@@ -31,7 +31,7 @@ export function openModal () {
 /**
  * Fermeture du maodal
  */
-export function closeModal () {
+export function closeModalContact () {
   dialog.close()
   modalOpen = false
   clearTimeout(tmOut)
@@ -141,7 +141,7 @@ function timerToCloseModal (timer = 10) {
   let displayTime = timer
   displayTimer.innerText = displayTime
   // tmOut = setTimeout(toggleModal,10000)
-  tmOut = setTimeout(closeModal, 10000)
+  tmOut = setTimeout(closeModalContact, 10000)
   setInterval(() => {
     displayTime--
     displayTimer.innerText = displayTime
