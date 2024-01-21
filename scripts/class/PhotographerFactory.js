@@ -66,7 +66,7 @@ export class PhotographerFactory {
   *
   * @param {Object[]} data - An array of media items.
   * @param {number} filter - The filter option for sorting the media items. Default is null.
-  * @returns {string} The HTML string representing the media elements.
+  * @returns {string} - The HTML string representing the media elements.
   */
   static getMedias (data) {
     let elementDom = ''
@@ -78,6 +78,23 @@ export class PhotographerFactory {
         elementDom += this.createPhotographerMedias(media).getDOMMediaVideo()
       }
     })
+
+    return elementDom
+  }
+
+  /**
+   * Get the lightbox media element for the given data.
+   *
+   * @param {Object} data - description of parameter
+   * @return {String} - the lightbox media element
+   */
+  static getMediasLightbox (data) {
+    let elementDom = ''
+    if (typeof data.image !== 'undefined') {
+      elementDom += this.createPhotographerMedias(data).getDOMLightboxMediaImage()
+    } else {
+      elementDom += this.createPhotographerMedias(data).getDOMLightboxMediaVideo()
+    }
 
     return elementDom
   }

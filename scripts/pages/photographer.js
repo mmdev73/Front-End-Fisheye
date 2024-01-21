@@ -15,6 +15,7 @@ import {
 } from '../utils/contactForm.js'
 import { objForm } from '../class/Validation.js'
 import { objMsg } from '../class/ErrorMsg.js'
+import { lightboxOpen, displayLightbox, closeLightbox, displayNextMedia, displayPreviousMedia } from '../utils/lightbox.js'
 // Extract the photographer ID from the URL query parameters and convert it to a number
 const photographerId = Number(new URL(location.href).searchParams.get('id'))
 
@@ -114,12 +115,37 @@ if (!isNaN(photographerId)) {
           closeModalContact()
           break
         case 'btn-modal-send':
-          console.log('TOTO')
           if (validateForm()) {
-            console.log('TATA')
             console.log(objForm.allValues) // Pour la soutenance
             toggleValidSend()
           }
+          break
+        case 'lb-media':
+          displayLightbox(medias, dataId)
+          break
+        case 'lb-btn-close':
+          closeLightbox()
+          break
+        case 'lb-btn-next':
+          displayNextMedia()
+          break
+        case 'lb-btn-prev':
+          displayPreviousMedia()
+          break
+        default:
+          break
+      }
+    }
+  })
+
+  document.addEventListener('keyup', (event) => {
+    if (lightboxOpen) {
+      switch (event.key) {
+        case 'ArrowLeft':
+          displayPreviousMedia()
+          break
+        case 'ArrowRight':
+          displayNextMedia()
           break
         default:
           break

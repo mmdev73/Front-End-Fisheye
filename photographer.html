@@ -97,24 +97,26 @@
   </dialog>
   <!-- LIGHTBOX -->
   <dialog class="lightbox-modal">
-    <div class="lb-container__left">
-      <button class="lb-btn__prev">
-        <i class="fa-solid fa-chevron-left"></i>
-        <span class="sr-only">Previous</span>
-      </button>
-    </div>
-    <div class="lb-container__middle">
+    <div class="lightbox-modal__box">
+      <div class="lb-container__left">
+        <button class="lb-btn__prev" data-context="lb-btn-prev">
+          <i class="fa-solid fa-chevron-left" data-context="lb-btn-prev"></i>
+          <span class="sr-only">Previous</span>
+        </button>
+      </div>
+      <div class="lb-container__middle">
 
-    </div>
-    <div class="lb-container__rigth">
-      <button class="lb-btn__close">
-        <i class="fa-solid fa-xmark"></i>
-        <span class="sr-only">Close</span>
-      </button>
-      <button class="lb-btn__next">
-        <i class="fa-solid fa-chevron-right"></i>
-        <span class="sr-only">Next</span>
-      </button>
+      </div>
+      <div class="lb-container__rigth">
+        <button class="lb-btn__close" data-context="lb-btn-close">
+          <i class="fa-solid fa-xmark" data-context="lb-btn-close"></i>
+          <span class="sr-only">Close</span>
+        </button>
+        <button class="lb-btn__next" data-context="lb-btn-next" autofocus>
+          <i class="fa-solid fa-chevron-right" data-context="lb-btn-next"></i>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
     </div>
   </dialog>
   <script src="./scripts/pages/photographer.js" type="module"></script>
