@@ -71,6 +71,9 @@ if (!isNaN(photographerId)) {
   const dynamicSubtitle = document.querySelector('.contact-modal__subtitle')
   dynamicSubtitle.textContent = photographers[0].name
 
+  /**
+  * Add event listener for click on the document and perform various actions based on the clicked element's data context.
+  */
   document.addEventListener('click', (event) => {
     if (event.target.hasAttribute('data-context')) {
       const dataId = event.target.getAttribute('data-id')
@@ -138,6 +141,9 @@ if (!isNaN(photographerId)) {
     }
   })
 
+  /**
+  * Add event listener for keyup on the document and perform actions if the lightbox is open.
+  */
   document.addEventListener('keyup', (event) => {
     if (lightboxOpen) {
       switch (event.key) {
@@ -152,6 +158,33 @@ if (!isNaN(photographerId)) {
       }
     }
   })
+
+  /**
+  * Add event listener for keydown on the active element and perform actions based on the event data.
+  */
+  document.activeElement.addEventListener('keydown', (event) => {
+    const dataContext = event.target.getAttribute('data-context')
+    const dataId = event.target.getAttribute('data-id')
+    let mediaToUpdate = {}
+    if (event.key === 'Enter') {
+      if (dataContext === 'lb-media') {
+        displayLightbox(medias, dataId)
+      }
+      if (dataContext === 'like-icon') {
+        mediaToUpdate = medias.find(media => media.id === Number(dataId))
+        if (!mediaToUpdate.isLiked) {
+          mediaToUpdate.likes++
+          mediaToUpdate.isLiked = true
+        } else {
+          mediaToUpdate.likes--
+          mediaToUpdate.isLiked = false
+        }
+        displayMedias(medias)
+        displayTotalLike(medias)
+      }
+    }
+  })
+
   // Modal eventListener for live validation
   inputFirst.addEventListener('input', () => isValidInput(inputFirst, objMsg.errName, rgxName))
   inputLast.addEventListener('input', () => isValidInput(inputLast, objMsg.errNameLast, rgxName))
