@@ -46,20 +46,6 @@ export function closeLightbox () {
 function displayCurrentMedia () {
   const lightboxContent = document.querySelector('.lb-container__middle')
   lightboxContent.innerHTML = PhotographerFactory.getMediasLightbox(currentMedia)
-  correctPosition()
-}
-
-/**
- * Function to adjust the position of the figcaptionbox based on the width of the media element.
- *
- * @return {void} No return value
- */
-function correctPosition () {
-  const media = document.querySelector('.lb__image')
-  const figcaptionbox = document.querySelector('.lb_caption--box')
-  console.log(media.offsetWidth)
-  figcaptionbox.setAttribute('style', `width:${media.offsetWidth}px`)
-  // TODO Correct the position because media.offsetWidth does not work correctly with video
 }
 
 /**

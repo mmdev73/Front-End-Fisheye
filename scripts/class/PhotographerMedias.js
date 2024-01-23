@@ -83,11 +83,9 @@ export class PhotographerMedias {
     let elementDom = ''
     elementDom += '<figure class="lb-figure">'
     elementDom += `<img data-id="${this.id}" src="${this.image}" alt="Photographie intitulée ${this.title}" class="lb__image">`
-    elementDom += '<div class="lb_caption--box">'
     elementDom += '<figcaption class="lb__caption">'
-    elementDom += `<h4 class="lb__title">${this.title}</h4>`
+    elementDom += this.title
     elementDom += '</figcaption>'
-    elementDom += '</div>'
     elementDom += '</figure>'
 
     return elementDom
@@ -104,11 +102,9 @@ export class PhotographerMedias {
     elementDom += `<video data-id="${this.id}" src="${this.video}" alt="Vidéo intitulée ${this.title}" class="lb__image" controls>`
     elementDom += `<source src="${this.video}" type="video/mp4">`
     elementDom += '</video>'
-    elementDom += '<div class="lb_caption--box">'
     elementDom += '<figcaption class="lb__caption">'
-    elementDom += `<h4 class="lb__title">${this.title}</h4>`
+    elementDom += this.title
     elementDom += '</figcaption>'
-    elementDom += '</div>'
     elementDom += '</figure>'
 
     return elementDom
