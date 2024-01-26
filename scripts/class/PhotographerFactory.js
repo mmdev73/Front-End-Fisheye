@@ -1,5 +1,5 @@
 import { PhotographerInfos } from './PhotographerInfos.js'
-import { PhotographerMedias } from './PhotographerMedias.js'
+import { MediasFactory } from './MediasFactory.js'
 export class PhotographerFactory {
   /**
    * Creates a new Photographer object based on the provided data.
@@ -20,21 +20,21 @@ export class PhotographerFactory {
   }
 
   /**
-   * Creates a new instance of PhotographerMedias using the provided data.
+   * Creates a new instance of MediasFactory using the provided data.
    *
-   * @param {Object} data - The data used to create the PhotographerMedias instance.
-   * @param {number} data.id - The ID of the PhotographerMedias.
+   * @param {Object} data - The data used to create the MediasFactory instance.
+   * @param {number} data.id - The ID of the MediasFactory.
    * @param {number} data.photographerId - The ID of the photographer.
    * @param {string} data.title - The title of the media.
    * @param {string} data.image - The image URL of the media.
    * @param {number} data.likes - The number of likes for the media.
    * @param {string} data.date - The date of the media.
    * @param {number} data.price - The price of the media.
-   * @return {PhotographerMedias} The newly created instance of PhotographerMedias.
+   * @return {MediasFactory} The newly created instance of MediasFactory.
    */
   static createPhotographerMedias (data) {
     const { id, photographerId, title, likes, date, price, isLiked, image = null, video = null } = data
-    return new PhotographerMedias(id, photographerId, title, likes, date, price, isLiked, image, video)
+    return new MediasFactory(id, photographerId, title, likes, date, price, isLiked, image, video)
   }
 
   /**

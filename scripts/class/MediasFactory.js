@@ -1,4 +1,4 @@
-export class PhotographerMedias {
+export class MediasFactory {
   /**
    * Constructs a new instance of the class.
    *
