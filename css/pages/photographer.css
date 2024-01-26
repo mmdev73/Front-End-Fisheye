@@ -66,7 +66,7 @@ PHOTOGRAPHER FILTER
   color: white;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0 10px;
   cursor: pointer;
 }
@@ -169,7 +169,7 @@ PHOTOGRAPHER FLOATING PRICE
   width: 376px;
   height: 80px;
   font-size: 24px;
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .floating-likes_infos{  
