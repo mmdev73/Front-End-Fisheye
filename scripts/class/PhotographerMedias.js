@@ -41,13 +41,13 @@ export class PhotographerMedias {
   getDOMMediaImage () {
     let elementDom = ''
     elementDom += '<figure class="media-image">'
-    elementDom += `<img tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.image}" alt="Photographie intitulée ${this.title}" class="media-image__image">`
+    elementDom += `<img tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.image}" alt="Photographie intitulée ${this.title}" class="media-image__image" aria-label="image closeup view">`
     elementDom += '<figcaption class="media-image__caption">'
     elementDom += `<h4 class="media-image__title">${this.title}</h4>`
     if (!this.isLiked) {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
     } else {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
     }
     elementDom += '</figcaption>'
     elementDom += '</figure>'
@@ -58,15 +58,15 @@ export class PhotographerMedias {
   getDOMMediaVideo () {
     let elementDom = ''
     elementDom += '<figure class="media-image">'
-    elementDom += `<video tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.video}" alt="Vidéo intitulée ${this.title}" class="media-image__image" controls>`
+    elementDom += `<video tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.video}" alt="Vidéo intitulée ${this.title}" class="media-image__image" aria-label="image closeup view" controls>`
     elementDom += `<source src="${this.video}" type="video/mp4">`
     elementDom += '</video>'
     elementDom += '<figcaption class="media-image__caption">'
     elementDom += `<h4 class="media-image__title">${this.title}</h4>`
     if (!this.isLiked) {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
     } else {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
     }
     elementDom += '</figcaption>'
     elementDom += '</figure>'
