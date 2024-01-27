@@ -45,9 +45,9 @@ export class MediasFactory {
     elementDom += '<figcaption class="media-image__caption">'
     elementDom += `<h4 class="media-image__title">${this.title}</h4>`
     if (!this.isLiked) {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <span role="button" aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></span></p>`
     } else {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <span role="button" aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></span></p>`
     }
     elementDom += '</figcaption>'
     elementDom += '</figure>'
@@ -64,9 +64,9 @@ export class MediasFactory {
     elementDom += '<figcaption class="media-image__caption">'
     elementDom += `<h4 class="media-image__title">${this.title}</h4>`
     if (!this.isLiked) {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <span role="button" aria-label="likes" tabindex="0" class="media-image__likes-icon far fa-heart" data-context="like-icon" data-id="${this.id}"></span></p>`
     } else {
-      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <i aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></i></p>`
+      elementDom += `<p class="media-image__likes"><span class="media-image__likes-number" data-id="${this.id}">${this.likes}</span> <span role="button" aria-label="likes" tabindex="0" class="media-image__likes-icon fas fa-heart" data-context="like-icon" data-id="${this.id}"></span></p>`
     }
     elementDom += '</figcaption>'
     elementDom += '</figure>'
