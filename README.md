@@ -3,7 +3,7 @@
 
 - 🔭 Version en ligne : [https://fisheye.dev73.fr](https://fisheye.dev73.fr)
 
-- 👨‍💻 All of my projects are available at [https://dev73.fr](https://dev73.fr)
+- 👨‍💻 Tous mes projets sont visible sur [https://dev73.fr](https://dev73.fr)
 
 <h3 align="left">Utilisation</h3>
 <p align="left">
