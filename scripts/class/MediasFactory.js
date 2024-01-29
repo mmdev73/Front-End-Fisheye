@@ -58,7 +58,7 @@ export class MediasFactory {
   getDOMMediaVideo () {
     let elementDom = ''
     elementDom += '<figure class="media-image">'
-    elementDom += `<video tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.video}" alt="Vidéo intitulée ${this.title}" class="media-image__image" aria-label="image closeup view" controls>`
+    elementDom += `<video tabindex="0" data-context="lb-media" data-id="${this.id}" src="${this.video}" alt="Vidéo intitulée ${this.title}" class="media-image__image" aria-label="image closeup view">`
     elementDom += `<source src="${this.video}" type="video/mp4">`
     elementDom += '</video>'
     elementDom += '<figcaption class="media-image__caption">'
